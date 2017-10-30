@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app='app'>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -7,8 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo</title>
 </head>
-<body>
+<body ng-controller="listController">
 
+  {{test}}
+
+  <ui-view>
+    
+  </ui-view>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+<script src="./app.js"></script>
 <script src="./services/listService.js"></script>
+<script src="./list/listController.js"></script>
 </body>
 </html>
