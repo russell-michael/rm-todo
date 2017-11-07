@@ -5,7 +5,10 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-massive('postgres://localhost:5432/rm-todo').then(function(database){
+//rm-todo
+massive('postgres://localhost:5432/massive-demo').then(function(database){
+  console.log("Database worked");
+
   app.get('/get', function(req, res, next){
     database.get_tasks().then(function(response){
       res.send(response);
