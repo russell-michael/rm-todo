@@ -6,18 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo</title>
+    <link rel="stylesheet" href="./globalStyles/mainStyles.css">
+    <link rel="stylesheet" href="./directives/mainHeader/mainHeaderStyles.css">
 </head>
-<body ng-controller="listController">
+<body>
 
-  {{test}}
-
-  {{test1}}
-
-  {{cards}}
-
-  <ui-view>
-
-  </ui-view>
+<main-header></main-header>
+<ui-view></ui-view>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
@@ -25,5 +20,6 @@
 <script src="./app.js"></script>
 <script src="./services/listService.js"></script>
 <script src="./list/listController.js"></script>
+<script src="./directives/mainHeader/mainHeaderDirective.js"></script>
 </body>
 </html>
