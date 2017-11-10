@@ -5,7 +5,7 @@ angular.module('app', ['ui.router'])
   $stateProvider
 
   .state('list', {
-    url: '/list',
+    url: '/',
     templateUrl: 'list/list.html'
 
   })

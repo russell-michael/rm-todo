@@ -1,0 +1,19 @@
+.todo-wrapper {
+    display: flex;
+    height: calc(100vh - 75px);
+}
+
+.leftSection,
+.rightSection {
+    width: 50%;
+    height: 100%;
+}
+
+
+.leftSection {
+    border-right: solid 1px red;
+}
+
+.rightSection {
+
+}
