@@ -8,7 +8,7 @@ angular.module('app', ['ui.router'])
 
   .state('list', {
     url: '/',
-    templateUrl: 'list/list.html'
-
+    templateUrl: 'list/list.html',
+    controller: 'listController'
   })
 })

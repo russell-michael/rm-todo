@@ -1,14 +1,18 @@
 angular.module('app').controller('listController', function($scope, listService){
-  $scope.test = "scope test";
 
-  $scope.test1 = listService.serviceTest;
+  $scope.item = {title: 'test', notes: 'This is my note'};
 
-  $scope.getCards = function(){
-    listService.getCards().then(function(response){
-      $scope.cards = response.data;
-      console.log($scope.cards);
-    })
-  }
+  // These are functions to be passed into the detail directive
+  // Eventually they should invoke a function from a service to actually do the stuff
+  $scope.onSave = function(item) {
+    console.log('saving...', item);
+  };
 
-  $scope.getCards();
-})
+  $scope.onRestore = function(item) {
+      console.log('restoring...', item);
+  };
+
+  $scope.onDelete = function(item) {
+      console.log('deleting...', item);
+  };
+});
