@@ -14,6 +14,12 @@ massive('postgres://localhost:5432/rm-todo').then(function(database){
       res.send(response);
     })
   })
+
+  // app.post('/post', function(req, res, next){
+  //   database.add_tasks([]).then(function(response){
+  //     res.send(response)
+  //   })
+  // })
 })
 
 

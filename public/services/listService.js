@@ -1,19 +1,47 @@
 angular.module('app').service('listService', function($http){
 
+  var list = [
+    {
+      id: 1,
+      task: "clean room"
+    },
+    {
+      id: 2,
+      task: "grocery shop"
+    },
+    {
+      id: 3,
+      task: "do homework"
+    }
+  ];
 
-  this.getData = function(){
-    return $http({
-      method: 'GET',
-      url: '/get'
-    })
+
+  //get
+  this.getList = function(){
+    return list;
   }
 
-  this.getCards = function(){
-    return $http({
-      method: 'GET',
-      url: 'https://deckofcardsapi.com/api/deck/new/draw/?count=2'
-    })
+  //post
+  this.createList = function(newList){
+    list = newList;
+    // return list;
   }
+
+  //put
+  this.addToList = function(newItem){
+    if(newItem){
+      list.push(newItem);
+      return list;
+    }
+  }
+
+  //delete
+
+
+
+
+
+
 
   this.serviceTest = "service test"
 })
