@@ -15,7 +15,6 @@ angular.module('app').service('listService', function($http){
     }
   ];
 
-
   //get
   this.getList = function(){
     return list;
@@ -23,25 +22,23 @@ angular.module('app').service('listService', function($http){
 
   //post
   this.createList = function(newList){
-    list = newList;
-    // return list;
+    if(newList){
+      list = [{id: 1, task: newList}];
+      return list;
+    }
   }
 
   //put
   this.addToList = function(newItem){
     if(newItem){
-      list.push(newItem);
+      list.push({id:4, task: newItem});
       return list;
     }
   }
 
   //delete
-
-
-
-
-
-
-
-  this.serviceTest = "service test"
+  this.deleteList = function(){
+    list = [];
+    return list;
+  }
 })

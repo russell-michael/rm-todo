@@ -13,12 +13,14 @@
     <div>
       <input type="text" ng-model="inputTask">
       <div><button ng-click="getList()">GET LIST</button></div>
-      <div><button ng-click="createList(inputTask)">NEW LIST</button></div>
+      <div><button ng-click="createList(inputTask)">CREATE LIST</button></div>
       <div><button ng-click="addToList(inputTask)">ADD TO LIST</button></div>
+      <div><button ng-click="deleteList()">DELETE LIST</button></div>
     </div>
 
 
     <div ng-repeat="item in list">
+      {{item.id}}
       {{item.task}}
     </div>
 

@@ -13,23 +13,19 @@ angular.module('app').directive('todoList', function() {
             //post
             $scope.createList = function(inputTask){
               console.log(inputTask);
-              listService.createList(inputTask);
-              $scope.list = listService.getList();
+              $scope.list = listService.createList(inputTask);
             }
 
             //put
             $scope.addToList = function(inputTask){
-              console.log(inputTask);
-
-              listService.addToList(inputTask);
-              $scope.list = listService.getList();
+              $scope.list = listService.addToList(inputTask);
             }
 
             //delete
+            $scope.deleteList = function(){
+              $scope.list = listService.deleteList();
+            }
 
         }
-        // scope: {
-        //
-        // }
     }
 });
