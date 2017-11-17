@@ -3,6 +3,10 @@
     <todo-list></todo-list>
   </div>
   <div class="rightSection">
-    <todo-detail></todo-detail>
+    <todo-detail
+      item="item"
+      on-save="onSave(item)"
+      on-restore="onRestore(item)"
+      on-delete="onDelete(item)"></todo-detail>
   </div>
 </div>

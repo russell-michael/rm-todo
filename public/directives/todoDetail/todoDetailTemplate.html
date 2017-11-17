@@ -1,3 +1,14 @@
 <div>
-    ITEM DETAIL
+    <div><input type="text" ng-model="task.title"></div>
+    <div><textarea name="" cols="30" rows="10" ng-model="task.notes"></textarea></div>
+    <div>
+        <!--Only if a change has been made-->
+        <button ng-click="onSave({item: task})">Save</button>
+        <!--Only if the task is marked as complete-->
+        <button ng-click="onRestore({item: task})">Restore</button>
+
+        <!--Display always-->
+        <button ng-click="onDelete({item: task})">Delete</button>
+    </div>
 </div>
+
