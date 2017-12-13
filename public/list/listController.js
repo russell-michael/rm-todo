@@ -1,10 +1,10 @@
 angular.module('app').controller('listController', function($scope, listService){
 
-  $scope.item = {title: 'test', notes: 'This is my note'};
+  $scope.item = {};
 
-  // These are functions to be passed into the detail directive
-  // Eventually they should invoke a function from a service to actually do the stuff
+  /////michaels functions
   $scope.onSave = function(item) {
+    // listService.saveEdits(item)
     console.log('saving...', item);
   };
 
@@ -15,4 +15,49 @@ angular.module('app').controller('listController', function($scope, listService)
   $scope.onDelete = function(item) {
       console.log('deleting...', item);
   };
+
+  $scope.selectListItem = function(task){
+    console.log("the new task is ", task);
+    $scope.item = task;
+  };
+
+
+
+
+
+
+
+  ///russells functions
+  //get
+  $scope.getList = function(input){
+    console.log("get list", input, $scope.list);
+    return listService.getList();
+
+  }
+
+  //post
+  $scope.createList = function(input){
+    $scope.list = listService.createList(input);
+    console.log("create list", input, $scope.list);
+
+  }
+
+  //put
+  $scope.addToList = function(input){
+    $scope.list = listService.addToList(input);
+    console.log("addto list", input, $scope.list);
+
+  }
+
+  //delete
+  $scope.deleteList = function(){
+    $scope.list = listService.deleteList();
+    console.log("delete List", $scope.list);
+  }
+
+
+
+
+
+
 });

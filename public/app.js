@@ -11,4 +11,9 @@ angular.module('app', ['ui.router'])
     templateUrl: 'list/list.html',
     controller: 'listController'
   })
+  .state('options', {
+    url: '/options',
+    template: '<div><todo-detail item="hat"></todo-detail></div>',
+    controller: 'optionsCtrl'
+  })
 })
