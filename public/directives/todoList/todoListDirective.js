@@ -13,9 +13,8 @@ angular.module('app').directive('todoList', function() {
         scope: {
           selectListItem: '&',
           getList: '&',
-          createList: '&',
-          addToList: '&',
-          deleteList: '&'
+          addToList: '&'
+          // deleteList: '&'
         }
     }
 });
