@@ -1,28 +1,18 @@
 <div class="todo-list">
 
     <div>
-      <input type="text" ng-model="input">
+        <input type="text" ng-model="input">
     </div>
 
-    <button ng-click="getList({input: input})">get list</button>
-    <button ng-click="createList({input: input})">createlist</button>
-    <button ng-click="addToList({input: input})">add to list</button>
-    <button ng-click="deleteList()">delete list</button>
+    <!--<button ng-click="getList()">get list</button>-->
+    <!--<button ng-click="createList()">createlist</button>-->
+    <button ng-click="addToList({item: input})">add to list</button>
+    <!--<button ng-click="deleteList()">delete list</button>-->
 
 
-    <div ng-repeat="item in list">
-      <!-- how do I get item to appear here? -->
-      {{item}}
+    <div ng-repeat="item in list" ng-click="selectListItem({item: item})">
+        {{item.id}}
+        {{item.title}}
+        {{item.notes}}
     </div>
-
-
-    <!-- <div ng-repeat="item in list" ng-click="selectListItem({task: item})">
-      {{item.id}}
-      {{item.task}}
-    </div> -->
-
-
-
-
-
 </div>

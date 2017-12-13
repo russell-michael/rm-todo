@@ -1,31 +1,21 @@
 <div class="todo-wrapper">
 
   <div class="leftSection">
-
-
     <todo-list
-      select-list-item="selectListItem(task)"
-      get-list="getList(input)"
-      create-list="createList(input)"
-      add-to-list="addToList(input)"
-      delete-list="deleteList()"
-
-      >
-
-    </todo-list>
+      add-to-list="addToList(item)"
+      select-list-item="selectListItem(item)"
+      get-list="getList()"
+    ></todo-list>
 
   </div>
 
 
 
   <div class="rightSection">
-
     <todo-detail
-      item="item"
-      on-save-in-directive="onSave(house)"
-      on-restore="onRestore(item)"
-      on-delete="onDelete(item)"
-      >
+      task="item"
+      on-save="onSave(task)"
+    >
 
     </todo-detail>
 

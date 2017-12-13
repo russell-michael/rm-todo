@@ -3,17 +3,29 @@ angular.module('app').service('listService', function($http){
   var list = [
     {
       id: 1,
-      task: "clean room"
+      title: "clean room",
+      notes: ''
     },
     {
       id: 2,
-      task: "grocery shop"
+      title: "grocery shop",
+      notes: ''
     },
     {
       id: 3,
-      task: "do homework"
+      title: "do homework",
+      notes: 'test notes'
     }
   ];
+
+  this.saveEdits = function(item) {
+    list.forEach(function(task, i) {
+      if(task.id === item.id) {
+        list.splice(i, 1, item);
+      }
+    });
+    return list;
+  };
 
   //get
   this.getList = function(){
@@ -31,7 +43,8 @@ angular.module('app').service('listService', function($http){
   //put
   this.addToList = function(newItem){
     if(newItem){
-      list.push({id:4, task: newItem});
+      list.push({id:list.length + 1, title: newItem});
+      console.log('list', list);
       return list;
     }
   }
