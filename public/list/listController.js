@@ -23,9 +23,6 @@ angular.module('app').controller('listController', function($scope, listService)
 
 
 
-
-
-
   ///russells functions
   //get
   $scope.getList = function(input){
