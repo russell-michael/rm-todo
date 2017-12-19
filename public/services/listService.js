@@ -30,7 +30,7 @@ angular.module('app').service('listService', function($http){
   //get
   this.getList = function(){
     return list;
-  }
+  };
 
   //post
   this.createList = function(newList){
@@ -38,7 +38,7 @@ angular.module('app').service('listService', function($http){
       list = [{id: 1, task: newList}];
       return list;
     }
-  }
+  };
 
   //put
   this.addToList = function(newItem){
@@ -47,11 +47,17 @@ angular.module('app').service('listService', function($http){
       console.log('list', list);
       return list;
     }
-  }
+  };
+
+  //delete
+  this.deleteTask = function(task) {
+    var index = list.map(function(t) {return t.id}).indexOf(task.id);
+    return list.splice(index, 1);
+  };
 
   //delete
   this.deleteList = function(){
     list = [];
     return list;
   }
-})
+});
