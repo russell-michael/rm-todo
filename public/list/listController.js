@@ -9,8 +9,8 @@ angular.module('app').controller('listController', function($scope, listService)
       console.log('restoring...', item);
   };
 
-  $scope.onDelete = function(item) {
-      console.log('deleting...', item);
+  $scope.onDeleteTask = function(item) {
+      listService.deleteTask(item);
   };
 
   $scope.selectListItem = function(task){
