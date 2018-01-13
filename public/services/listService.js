@@ -18,14 +18,14 @@ angular.module('app').service('listService', function($http){
     }
   ];
 
-  this.saveEdits = function(item) {
-    list.forEach(function(task, i) {
-      if(task.id === item.id) {
-        list.splice(i, 1, item);
-      }
-    });
-    return list;
-  };
+  // this.saveEdits = function(item) {
+  //   list.forEach(function(task, i) {
+  //     if(task.id === item.id) {
+  //       list.splice(i, 1, item);
+  //     }
+  //   });
+  //   return list;
+  // };
 
   //get
   this.getList = function(){
@@ -33,25 +33,26 @@ angular.module('app').service('listService', function($http){
   }
 
   //post
-  this.createList = function(newList){
-    if(newList){
-      list = [{id: 1, task: newList}];
-      return list;
-    }
-  }
+  // this.createList = function(newList){
+  //   if(newList){
+  //     list = [{id: 1, task: newList}];
+  //     return list;
+  //   }
+  // }
 
   //put
-  this.addToList = function(newItem){
-    if(newItem){
-      list.push({id:list.length + 1, title: newItem});
-      console.log('list', list);
-      return list;
-    }
-  }
+  // this.addToList = function(newItem){
+  //   if(newItem){
+  //     list.push({id:list.length + 1, title: newItem});
+  //     console.log('list', list);
+  //     return list;
+  //   }
+  // }
 
   //delete
-  this.deleteList = function(){
-    list = [];
-    return list;
-  }
+  // this.deleteList = function(){
+  //   list = [];
+  //   return list;
+  // }
+
 })

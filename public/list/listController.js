@@ -1,31 +1,32 @@
 angular.module('app').controller('listController', function($scope, listService){
 
   /////michaels functions
-  $scope.onSave = function(item) {
-    $scope.list = listService.saveEdits(item);
-  };
-
-  $scope.onRestore = function(item) {
-      console.log('restoring...', item);
-  };
-
-  $scope.onDelete = function(item) {
-      console.log('deleting...', item);
-  };
+  // $scope.onSave = function(item) {
+  //   $scope.list = listService.saveEdits(item);
+  // };
+  //
+  // $scope.onRestore = function(item) {
+  //     console.log('restoring...', item);
+  // };
+  //
+  // $scope.onDelete = function(item) {
+  //     console.log('deleting...', item);
+  // };
 
   $scope.selectListItem = function(task){
-    console.log("the new task is ", task);
-    if (!$scope.item || $scope.item.id !== task.id) {
+    // console.log("the new task is ", task);
+
+    // if (!$scope.item || $scope.item.id !== task.id) {
       $scope.item = angular.copy(task);
-    }
+    // }
   };
 
-
-
-
   ///russells functions
+
   //get
-  $scope.getList = function(input){
+  $scope.getList = function(){
+    console.log("get list called");
+    // $scope.getlist = listService.getList();
     return listService.getList();
   };
 
@@ -37,10 +38,10 @@ angular.module('app').controller('listController', function($scope, listService)
   // }
 
   //post
-  $scope.addToList = function(input){
-    $scope.list = listService.addToList(input);
-    console.log("addto list", input, $scope.list);
-  }
+  // $scope.addToList = function(input){
+  //   $scope.list = listService.addToList(input);
+  //   console.log("addto list", input, $scope.list);
+  // }
 
   //delete
   // $scope.deleteList = function(){
